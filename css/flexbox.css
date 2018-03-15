@@ -9,6 +9,8 @@
   border-radius: 1rem;
   box-shadow: 3px 3px 12px lightgrey;
   margin-bottom: 2rem;
+  background-color: white;
+
 }
 @media(min-width:700px){
   .container-1{
@@ -40,6 +42,8 @@
     box-shadow: 3px 3px 12px lightgrey;
     margin: 1rem;
     min-width: 700px;
+    background-color: white;
+
 
   }
 }
@@ -52,7 +56,6 @@
   /* padding-left: 2rem; */
   flex-wrap:wrap;
   min-height: 250px;
-  /* background-color: white; */
   /* color: black; */
 
   /* width:100%;
@@ -101,7 +104,7 @@
 
 body{
   font-family: "IBMPlexSans", Helvetica, sans-serif;
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0,0,0,0.02);
   color: rgba(0,0,0,0.9);
 }
 
@@ -129,6 +132,10 @@ p {
   max-width: 500px;
   line-height: 1.25rem;
   margin: 0.5rem 0;
+}
+
+div{
+  /* background-color: white; */
 }
 
 img{
@@ -168,7 +175,6 @@ height: 100%;
   text-decoration:underline;
   /* display:block; */
   padding-right: 1rem;
-  padding-top: 1rem;
 }
 
 a:hover, a:active{
