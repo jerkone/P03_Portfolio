@@ -199,6 +199,33 @@ a:hover, a:active{
   /* background-color: rgba(0,0,0,0.3); */
 
 }
+
+#close {
+  /* clear: both; */
+  position: fixed;
+  transform-origin: center;
+align-content: center;
+ /* width: 45px;
+  height: 45px; */
+padding:0.8rem 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* @media(max-width:700px){
+  #close {
+    /* clear: both; */
+    /* position: fixed;
+    transform-origin: center;
+  align-content: center;
+   /* width: 45px;
+    height: 45px; */
+  /* padding:0.8rem 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+} */
+
  /* a{
   color: blue;
   font-weight: bold;
