@@ -153,6 +153,48 @@ img{
     /* max-width: device-width; */
   }
 }
+
+
+header {
+    background: #f5b335;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+
+    box-shadow: 3px 3px 12px lightgrey;
+    margin-bottom: 2rem;
+    background-color: white;
+
+    align-content: center;
+
+    box-shadow:
+}
+
+.nav-bar {
+    align-content: center;
+    text-decoration: none;
+
+}
+
+.nav-menu {
+  align-self: center;
+  text-decoration: none;
+  color: gray;
+}
+
+.bottom-line {
+  border-radius: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px lightgray solid;
+  position: absolute;
+  width: 100%;
+  margin: 1rem;
+}
+
+
+
 .video-container {
   position: relative;
 padding-bottom: 56.25%; /* 16:9 */
@@ -176,6 +218,7 @@ height: 100%;
   /* display:block; */
   padding-right: 1rem;
 }
+
 
 a:hover, a:active{
   color: rgba(0,0,0,0.6);
