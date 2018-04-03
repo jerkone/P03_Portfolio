@@ -52,7 +52,7 @@
 
   .container-2 div{
   /* border: 1px black solid; */
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 0rem 1rem;
   /* padding-left: 2rem; */
   flex-wrap:wrap;
   min-height: 250px;
@@ -109,9 +109,9 @@ body{
 }
 
 h1{
-  font-size: 2em;
+  font-size: 3em;
   font-weight: bold;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 h2 {
@@ -119,7 +119,9 @@ h2 {
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  margin-top: .25rem;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -146,11 +148,34 @@ img{
   display:block;
 }
 
+
+.cover-img{
+  color: rgba(255, 0, 0, 0.5);
+  position: absolute;
+  float:left;
+  z-index: -1;
+  margin-top: -8rem;
+  margin-right:0rem;
+  max-width: 100%;
+  right: 0px;
+  padding: 1rem;
+  max-height: 600px;
+}
+
 @media(max-width:700px){
+
   img{
     max-width:100%;
     display:block;
     /* max-width: device-width; */
+  }
+
+  .cover-img{
+    position: relative;
+    display: block;
+    float:left;
+    z-index: -1;
+    /* margin-top: -2rem; */
   }
 }
 
@@ -208,6 +233,9 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
+/* max-width: 900px; */
+align-content: center;
+align-self: center;
 }
 
 .text-link {
@@ -231,9 +259,16 @@ a:hover, a:active{
   background-color: rgba(0,0,0,0.6);
   color: white;
   text-decoration: none;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  /* margin-bottom: 2rem; */
   display:inline-block;
+}
+
+.bottom{
+  position:absolute;
+padding-bottom: 2rem;
+  bottom: 2rem;
+  display: inline-block;
 }
 
 .button:hover, .button:active{
@@ -360,14 +395,106 @@ padding:0.8rem 1rem;
 }
 .accordion-header {
   display: block;
-  padding: 1rem;
-  margin: 1rem 1rem 0 0;
+  padding: 2rem 3rem;
+  margin: 12rem 1rem 0 0;
   width: auto;
+  height: 400px;
   text-decoration: none;
   background-color: rgba(0,0,0,0.03);
   color: rgba(0,0,0,0.9);
+  /* border: red solid 1px; */
+  /* z-index: -1; */
 }
 
+
+.accordion-header .cover-img{
+  opacity: 0.8;
+  margin-top: -10rem;
+  /* position: absolute; */
+  /* z-index: 1; */
+}
+
+
+@media(max-width:700px){
+  .accordion-header {
+    padding: 2rem 1rem 3rem 1rem;
+  }
+
+  .accordion-header .cover-img{
+    opacity: 0.8;
+/* max-width: 90%; */
+right: 0;
+margin-right: -5rem;
+float: right;
+/* position: absolute; */
+    /* z-index: 1; */
+  }
+
+  .accordion-header p{
+    font-size: 0;
+  }
+}
+
+/* code from https://stackoverflow.com/questions/11660710/css-transition-fade-in */
+.accordion-header:hover .cover-img{
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  opacity: 0.9;
+
+  -webkit-transition: margin-top 0.5s ease-in;
+  -moz-transition: margin-top 0.5s ease-in;
+  -o-transition: margin-top 0.5s ease-in;
+  margin-top: -15rem;
+
+  transform: scale(1.05);
+  transition: all 2s ease;
+
+
+}
+
+.accordion-header:not( :hover) .cover-img{
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  opacity: 0.8;
+
+  -webkit-transition: margin-top 0.5s ease-in;
+  -moz-transition: margin-top 0.5s ease-in;
+  -o-transition: margin-top 0.5s ease-in;
+  margin-top: -13rem;
+
+  transform: scale(1);
+  transition: all 1s ease;
+}
+
+@media(max-width:700px){
+  .accordion-header:hover .cover-img{
+    -webkit-transition: margin-top 0.5s ease-in;
+    -moz-transition: margin-top 0.5s ease-in;
+    -o-transition: margin-top 0.5s ease-in;
+    margin-top: -12rem;
+    margin bottom:0;
+
+    transform: scale(1.05);
+    transition: all 2s ease;
+
+  }
+
+  .accordion-header:not( :hover) .cover-img{
+    -webkit-transition: margin-top 0.5s ease-in;
+    -moz-transition: margin-top 0.5s ease-in;
+    -o-transition: margin-top 0.5s ease-in;
+    margin-top: -8rem;
+
+    transform: scale(1);
+    transition: all 1s ease;
+  }
+
+}
+.accordion-header p{
+  max-width: 600px;
+}
 /* a.accordion-header:active {
   background-color: #FFFDF4;
 } */
@@ -376,32 +503,54 @@ padding:0.8rem 1rem;
   padding: 0;
   height: 0;
   overflow: hidden;
-  background-color: white;
+  overflow-y: hidden;
 
-  -webkit-transition:height 400ms ease;
-  transition:height 400ms ease;
-  width: 100%;
-  padding-left:2rem;
-  position: relative;
+  /* background-color: white; */
+margin-right: 1rem;
+  -webkit-transition:height 1s ease;
+  transition:height 1s ease;
+
+  /* width: 100%; */
+  /* padding-left:2rem; */
+  position: absolute;
 
 
 
 }
 
 .accordion-content p {
+  /* clear: both; */
+
   width: 100%;
 }
 
 .accordion-content:target {
-  height: 520px;
-  background-color: white;
+
+  /* clear: both; */
+
+  height: 100%;
+  /* width: 100%; */
+  padding: 2rem 3rem 2rem 3rem;
+  /* max-height: 100%; */
+  /* padding-right: 1rem;
+  margin-right: 1rem; */
+  background-color: rgba(0,0,0,0.03);
   border: 1.5 solid #ef7e93;
-  overflow-y: scroll;
-  width: 100%;
+  overflow-y: visible;
+  /* width: 100%; */
   position: relative;
+  /* z-index: -1; */
+}
+
+@media(max-width:700px){
+  .accordion-content:target {
+    padding: 2rem 1rem;
+  }
 }
 
 ul {
+  /* clear: both; */
+
   padding-left: 1rem;
   style: none;
   text-decoration:none;
@@ -410,11 +559,15 @@ ul {
 }
 
 .close{
-  position: relative;
-  margin-top: 10%;
-  margin-left: 80%;
+  /* position: absolute; */
+  /* margin-top: 10%;
+  margin-left: 80%; */
+  /* right: 3rem; */
+  display:inline-block;
+  padding:  0.5rem 0.75rem;
   /* margin-left:  */
-  /* float:left; */
+  float:right;
+  /* clear: both; */
 }
 /* .review_container{
   margin: 1.5rem;
