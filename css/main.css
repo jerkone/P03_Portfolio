@@ -1,3 +1,10 @@
+/*from https://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa*/
+html, body {
+  max-width: 100%;
+  overflow-x:hidden;
+}
+
+
 /* from https://www.youtube.com/watch?v=JJSoEo8JSnc */
 
 .container-1{
@@ -112,6 +119,7 @@ h1{
   font-size: 3em;
   font-weight: bold;
   margin: 0;
+  z-index: 99;
 }
 
 h2 {
@@ -119,7 +127,6 @@ h2 {
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
-  /* margin-top: 1rem; */
   margin-top: .25rem;
   margin-bottom: 1rem;
 }
@@ -132,8 +139,47 @@ p {
 
   min-width: 250px;
   max-width: 500px;
-  line-height: 1.3rem;
+  line-height: 1.35rem;
   margin: 0.5rem 0;
+}
+
+/*from https://stackoverflow.com/questions/9670499/is-there-a-way-to-change-the-width-of-the-code-html-tag?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa*/
+code {
+  display: inline-block;
+  background-color: rgba(0,0,0,0.1);
+  padding: .25rem 1rem;
+  margin: -0.25rem 0 2rem 0;
+  max-width: 600px;
+  line-height: 1.75rem;
+}
+
+.color {
+  text-align: center;
+  display: inline-block;
+  margin: 1rem 2rem 3rem 0rem;
+  padding: 2rem;
+}
+
+.black09 {
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+}
+
+.black06 {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+
+}
+
+.black03 {
+    background-color: rgba(0,0,0,0.3);
+    color: black;
+
+}
+
+.black01 {
+    background-color: rgba(0,0,0,0.1);
+    color: black;
 }
 
 div{
@@ -180,7 +226,7 @@ img{
 }
 
 
-header {
+/*header {
     background: #f5b335;
     height: 40px;
     position: fixed;
@@ -196,15 +242,15 @@ header {
 
     box-shadow:
 }
+*/
 
 
-
-.nav-menu {
+/*.nav-menu {
   align-self: center;
   text-decoration: none;
   color: gray;
 }
-
+*/
 .bottom-line {
   border-radius: 0;
   padding-bottom: 1rem;
@@ -261,63 +307,207 @@ width: 100%;
 height:400px;
 
 } */
+}
 
-.nav-bar {
+.nav-bar{
+ /* width 80%;
+  margin: 0 auto;*/
+  position: sticky;
+  height: 100px;
+  background-color: rgba(0,0,0, 1);
+}
+header {
+  top: 0;
+  /*align-content: center;*/
   position: fixed;
-  /* display:block; */
-  text-align: center;
-  /* align-content: center; */
-  margin-top: -4rem;
-  left: 20%;
-  max-width: 100%;
-  z-index: 1;
-  /* border-bottom: solid black 1px; */
-  /* padding-bottom: -3rem; */
+  width: 100%;
+
+  /*linear gradient from https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient*/
+  background:
+            /*linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.8) 70.71%),*/
+            linear-gradient(180deg, rgba(255,255,255,.9) 5%, rgba(255,255,255,.8), rgba(255,255,255,0) 120%);
+  /*rgba(255, 255, 255, 0.8);*/
+  z-index: 100;
 }
 
-.nav-link {
-  position: relative;
-  display: inline-block;
-  margin: 1rem 0;
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav {
+  position: sticky;
+  float: right;
   margin-right: 3rem;
-  font-weight: bold;
-  color: rgba(0,0,0,0.8);
-  /* margin: 1rem; */
+  margin-top: 0.4rem;
+}
+
+.nav-home{
+  /*position: absolute;*/
+  float: left;
+  /*margin-left: 20%;*/
   text-decoration: none;
-  /* border-bottom: solid rgba(0,0,0,0.3) 1px;   */
-  /* display:block; */
-  padding-bottom: 4px;
-}
-.nav-link:hover {
-  padding-bottom: 4px;
-
-  color: rgba(0,0,0,0.9);
-  border-bottom: solid rgba(0,0,0,0.6) 1px;
+    margin: 0.75rem 0 0 20%;
 }
 
+/*menu from https://www.youtube.com/watch?v=XsvvSRN9DyA*/
+#menu-icon {
+  background: url(../img/menu-icon.svg);
+  display: hidden;
+  background-size: cover;
+  margin-top: .25rem;
+  width: 40px;
+  height: 40px;
+}
+
+/*different menu from https://www.youtube.com/watch?v=xMTs8tAapnQ*/
+label {
+  margin: 0 1rem 0 0;
+  font-size: 26px;
+  line-height: 50px;
+  display: none;
+  top: 0;
+}
+
+#toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    float: right;
+    position: fixed;
+  }
+
+  nav {
+    /* position: absolute; */
+    margin-right: 1rem;
+    margin-top: 0rem;
+    float: right;
+  }
+  #menu-icon {
+    display: inline-block;
+    margin-right: 0;
+    float: right;
+  }
+
+  nav ul, nav:active ul {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: lightgray;
+    right: 10px;
+    /*top: 65px;*/
+    width: 35%;
+  }
+
+  nav: hover ul {
+    float: right;
+    display: block;
+  }
+
+  nav li {
+    position: absolute;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0;
+  }
+
+
+
+  label {
+    display: block;
+    cursor: pointer;
+    float: right;
+    right: 0;
+  }
+  .menu {
+    text-align: center;
+    width: 100%;
+    display:none;
+    float: right;
+    right: 0;
+  }
+
+  .menu a {
+    display: block;
+    border-bottom: 1px solid black;
+    margin: 0;
+    float: right;
+  }
+
+  #toggle:checked + .menu {
+    display:block;
+  }
+
+  .text-link {
+    display: block;
+  }
+}
+
+
+nav li{
+  display: inline-block;
+  /*margin-right: 2rem;*/
+  margin: 0 1.5rem 0 0;
+}
+/**/
+div li{
+  display: inline-block;
+  margin-right: 3rem;
+  margin: 0 1.5rem 0 0;
+  padding-left: 0;
+}
+
+div ul{
+  padding-left: 0;
+}
 
 .text-link {
+  display: inline-block;
   margin: 1rem 0 0 0;
   font-weight: bold;
   color: rgba(0,0,0,0.6);
-  margin: 1rem;
+  margin: 1rem 0 0 0;
   text-decoration: none;
   border-bottom: solid rgba(0,0,0,0.3) 1px;  /* display:block; */
   padding-bottom: 4px;
 }
 
+.nav-item {
+  margin: 0;
+  /* display: block; */
+  padding-top: 1rem;
+  margin-right: 3rem;
+}
+
 .text-link:hover {
   color: rgba(0,0,0,0.9);
   border-bottom: solid rgba(0,0,0,0.6) 2px;
+
+
+ /* -webkit-transition: padding-bottom 0.5s ease-in;
+  -moz-transition: padding-bottom 0.5s ease-in;
+  -o-transition: padding-bottom 0.5s ease-in;*/
+  padding-bottom: 3px;
 }
 
+
+@media(max-width:700px){
+}
 
 /* a:hover, a:active{
   color: rgba(0,0,0,0.6);
 } */
 
-
+.text{
+  z-index: 99;
+}
 .button{
+  position: auto;
   border-radius: 99px;
   padding: 10px 50px;
   background-color: rgba(0,0,0,0.8);
@@ -378,8 +568,8 @@ height:400px;
 
 }
 
-.about {
-  background-color: rgba(255, 255 ,255, 0.6);
+.wrapper {
+  background-color: rgba(255, 255 ,255, 0.0);
 margin-top: 4rem;
   padding-top: 8rem;
   margin-left: 20%;
@@ -427,7 +617,6 @@ padding:0.8rem 1rem;
 
 
 
-
 /* ACCORDION */
 /* code from https://www.youtube.com/watch?v=8t8QCRMZCu4 */
 
@@ -446,9 +635,9 @@ padding:0.8rem 1rem;
   margin: 16rem 1rem 0 0;
   width: auto;
   max-width: 100%;
-  height: 300px;
+  height: 100%;
   text-decoration: none;
-  overflow: hidden;
+  overflow: visible;
   background-color: rgba(0,0,0,0.03);
   color: rgba(0,0,0,0.9);
   /* border: red solid 1px; */
@@ -470,6 +659,11 @@ padding:0.8rem 1rem;
   left:30%;
   position: absolute;
   z-index: 0;
+  overflow: hidden;
+}
+
+.accordion-body h1, h2, p {
+  z-index: 99;
 }
 
 #beet-cover {
@@ -507,15 +701,22 @@ z-index: 2;
 
   .accordion-header .cover-img{
     opacity: 0.8;
-/* max-width: 90%; */
-right: 0;
-margin-right: -5rem;
-margin-left: auto;
-float: right;
-position: absolute;
+  /* max-width: 90%; */
+  right: 0;
+  margin-right: -5rem;
+  margin-left: auto;
+  float: right;
+  position: absolute;
     /* z-index: 1; */
   }
 
+  .accordion-body h1 {
+    z-index: 99;
+  }
+
+  .accordion-body .cover-img{
+    z-index: 0;
+  }
   #beet-cover {
     /* margin-top: -13rem; */
     left:auto;
@@ -704,3 +905,83 @@ ul {
   margin-top: 2rem;
 
 } */
+
+
+footer {
+  z-index: 99;
+  margin-top: 10%;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.6);
+  /* padding: 1rem; */
+  /* clear: both; */
+}
+
+footer ul {
+  display: block;
+
+}
+
+footer .wrapper {
+display: block;
+background-color: rgba(0,0,0,0);
+}
+
+footer h2 {
+  display: block;
+  color: rgba(255,255,255,0.8);
+}
+
+footer h2:hover {
+  color: rgba(255,255,255,1);
+}
+
+footer a {
+  font-size: 0.9em;
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+footer ul{
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+footer .wrapper {
+  margin: 0 0 0 20%;
+  padding: .25rem 1rem 60px 0;
+  /* left: 20%; */
+  display: block;
+}
+footer .nav-home {
+  position: relative;
+
+  margin-left: 0;
+  left:0;
+  font-size: 0.8em;
+  color: rgba(255,255,255,0.8);
+  border-bottom: none;
+}
+
+footer .nav-home:hover {
+  color: rgba(255,255,255,1);
+  border-bottom: none;
+}
+
+footer .text-link {
+  position: relative;
+
+  color: rgba(255,255,255,0.8);
+  padding-top: 1rem;
+  border-bottom: none;
+  padding-bottom: 0;
+  /* float: left; */
+  margin-left: 0;
+}
+
+footer .text-link:hover {
+  color: rgba(255,255,255,1);
+  border-bottom: none;
+  padding-bottom: 0;
+}

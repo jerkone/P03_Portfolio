@@ -14,32 +14,43 @@
 </head>
 
 <body>
-  <nav class="nav-bar">
 
-      <a href="index.html" class="nav-link"><h2>Jerkone Casem</h2></a>
+  <header>
 
-<a href="index.html" class="nav-link"> </a>
+    <div class="nav-bar">
+      <a href="index.html" class="nav-home"><h2>Jerkone Casem</h2></a>
 
-      <a href="index.html" class="nav-link menu-item">Work</a>
-      <a href="about.html" class="nav-link menu-item">About</a>
+      <nav>
+        <label for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle"/>
 
+        <div class="menu">
+          <a href="index.html" class="nav-item text-link">Work</a>
+          <a href="About.html" class="nav-item text-link">About</a>
+        </div>
+      </nav>
 
-  </nav>
-
-<div class="about">
+    </div>
+  </header>
+<div class="wrapper">
   <h1>Hello, I'm Jerkone</h1>
   <h2>A visual and user experience designer based in Vancouver. </h2>
   <p>I am currently studying design at Simon Fraser University while working as a UX/UI designer for the SFU OLC.</p>
   <br>
   <br>
-  <a href="http://docs.wixstatic.com/ugd/ed15a6_3aeb00dccbb149f0a090305e9c09ed35.pdf" class="text-link" target="_blank">Resume</a>
 
-  <a href="https://www.linkedin.com/in/jerkone/" target="_blank"  class="text-link">LinkedIn</a>
-  <!-- "mailto" code from https://knowledge.hubspot.com/articles/kcs_article/cos-pages-editor/how-do-i-create-a-mailto-link -->
-  <a href="mailto:jerkonecasem@gmail.com" class="text-link">Email me</a>
-  <br>
-  <br>
-  <a href="#" class="button">about</a>
+  <ul>
+    <li><a href="http://docs.wixstatic.com/ugd/ed15a6_3aeb00dccbb149f0a090305e9c09ed35.pdf" class="text-link" target="_blank">Resume</a></li>
+
+     <li><a href="https://www.linkedin.com/in/jerkone/" target="_blank"  class="text-link">LinkedIn</a>
+    <!-- "mailto" code from https://knowledge.hubspot.com/articles/kcs_article/cos-pages-editor/how-do-i-create-a-mailto-link -->
+     <li><a href="mailto:jerkonecasem@gmail.com" class="text-link">Email me</a></li>
+
+    <br>
+    <br>
+  </ul>
+  <a href="#" class="button">about</a></li>
+
 </div>
   <!-- <div class="container-1">
 
@@ -65,12 +76,13 @@
               </div> -->
 
               <div class="accordion-body" id="beet-body">
-                <h1>Beet</h1>
-                <h2>Visual Identity & UX/UI Project</h3>
+
+                <h1 class="text">Beet</h1>
+                <h2 class="text">Visual Identity &amp; UX/UI Project</h2>
                   <!-- <div> -->
-                    <a href="Beet.html"><img src="img\cover-beet-small.png" class="cover-img" id="beet-cover"></a>
+                    <a href="Beet.html"><img src="img/cover-beet-small.png" class="cover-img" id="beet-cover" alt="computer showing Beet interface"></a>
                   <!-- </div> -->
-                <p>Website and logo design for Beet.<br/>
+                <p class="text">Website and logo design for Beet.<br/>
                 Launching 2018 using my designs.</p>
 
               <br>
@@ -97,9 +109,10 @@
 
               <div class="accordion-body">
                 <h1>Dew Point</h1>
-                <h2>UX/UI Project</h3>
+                <h2>UX/UI Project</h2>
                   <!-- <div> -->
-                    <a href="DewPoint.html"><img src="img\cover-dewpoint.png"  class="cover-img"></a>
+                                    <a href="DewPoint.html"><img src="img/cover-dewpoint.png"  class="cover-img" alt="phone showing dew point interface"></a>
+
                   <!-- </div> -->
                 <p>A hiking app that encourages exploration<br/>and informed decision-making.</p>
 
@@ -108,9 +121,9 @@
               <br><br>
               <br>
 <!-- <div class="bottom"> -->
-            <a href="DewPoint.html" class="button">more</a>
-            <a href="#dewpoint-video" class="button2">video</a>
-          </div>
+                <a href="DewPoint.html" class="button">more</a>
+                <a href="#dewpoint-video" class="button2">video</a>
+              </div>
 
 <!-- </div> -->
           </div>
@@ -145,16 +158,26 @@
 
     </li>
 
-<br><br><br><br><br><br>
 
 
     </ul>
-
-  <!-- </div> -->
-
+<br><br><br><br>
 
 
   <footer>
+    <div class="wrapper">
+      <a href="index.html" class="nav-home"><h2>Jerkone Casem &#169; 2018</h2></a>
+       <ul>
+            <li><a href="index.html" class=" text-link">Work</a></li>
+            <li><a href="About.html" class=" text-link">About</a></li>
+
+
+                        <li><a href="Styleguide.html" class=" text-link">Styleguide</a></li>
+                        <li><a href="References.html" class=" text-link">References</a></li>
+
+
+       </ul>
+    </div>
   </footer>
 </body>
 </html>
